@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('course_id');
             $table->string('section_id', 255)->nullable();
-            $table->integer('duration', 255)->nullable();
-            $table->integer('num_questions', 255)->nullable();
-            $table->integer('total_mark', 255)->nullable();
-            $table->integer('pass_mark', 255)->nullable();
-            $table->integer('drip_rule', 255)->nullable();
-            $table->integer('summary', 255)->nullable();
+            // Corrected: Removed the invalid second parameter '255' from integer definitions
+            $table->integer('duration')->nullable();
+            $table->integer('num_questions')->nullable();
+            $table->integer('total_mark')->nullable();
+            $table->integer('pass_mark')->nullable();
+            $table->integer('drip_rule')->nullable();
+            $table->integer('summary')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });
